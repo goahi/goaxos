@@ -25,6 +25,7 @@
     DB "FAT12   "    ; フォーマットの名前（8バイト）
     RESB 18          ; とりあえず18バイトあけておく
 
+
 ; プログラム本体
 
 entry:
@@ -35,6 +36,7 @@ entry:
     MOV ES,AX
 
     MOV SI,msg
+
 putloop:
     MOV AL,[SI]
     ADD SI,1 ; SIに1を足す
@@ -44,9 +46,12 @@ putloop:
     MOV BX,15 ; カラーコード
     INT	0x10 ; ビデオBIOS呼び出し
     JMP putloop
+
 fin:
     HLT ; 何かあるまでCPUを停止させる
     JMP fin ; 無限ループ
+
+
 ; メッセージ部分
 msg:
     DB 0x0a, 0x0a ; 改行を2つ
