@@ -57,7 +57,7 @@ msg:
     DB 0x0a, 0x0a ; 改行を2つ
     DB "hello, world"
     DB 0x0a ; 改行
-    DB "This is goaxos v.e451671a"
+    DB "This is goaxos v.ff3a21bd"
     DB 0x0a ; 改行
     DB 0
 
